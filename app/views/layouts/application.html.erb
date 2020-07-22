@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MemoApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Font Awesomeからアイコンを使えるようにするためのコード↓-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <header>
+      <div class ="header-logo">
+        <% if @current_user %>
+          <%= link_to("MemoApp","/users/#{@current_user.id}")%>
+        <% else %>
+          <%= link_to("MemoApp","/home/top")%>
+        <% end %>
+      </div>
+      <ul class ="header-menu">
+        <% if session[:user_id]%>
+          <!--ログイン中のヘッダー-->
+          <li>ログイン中：<%= link_to(@current_user.name,"/users/#{@current_user.id}")%></li>
+          <li><%= link_to("新規投稿","/posts/new")%></li>
+          <li><%= link_to("ログアウト","/logout",{method:"post"})%></li>
+        <% else %>
+          <!--ログアウトorユーザー未登録のヘッダー-->
+          <li><%= link_to("MemoAppとは","/home/about")%></li>
+          <li><%= link_to("新規ユーザー登録","/signup")%></li>
+          <li><%= link_to("ログイン","/login")%></li>
+        <% end %>
+      </ul>
+    </header>
+
+    <!--フラッシュメッセージの表示-->
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

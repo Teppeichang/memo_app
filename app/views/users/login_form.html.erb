@@ -1,0 +1,22 @@
+<!--ログイン画面-->
+<div class="main users-new">
+  <div class="container">
+    <h2 class="form-heading">ログイン</h2>
+      <div class="form users-form">
+        <!--エラーが発生した場合、エラーメッセージをフォーム内に表示-->
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <!--form_tagメソッドでフォームの入力内容をアクション側へ送信。"post"のルーティングに用いる。-->
+        <%= form_tag("/login")do %>
+        <p>メールアドレス</p>
+        <input name="email" value="<%= @email %>">
+        <p>パスワード</p>
+        <input name="password" type="password" value="<% @password %>">
+        <input type="submit" value="ログイン">
+      </div>
+    <% end %>
+  </div>
+</div>

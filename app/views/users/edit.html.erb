@@ -1,0 +1,20 @@
+<!--ユーザー情報の編集ページ-->
+<div class="main users-edit">
+  <div class="container">
+    <h2 class="form-heading">アカウント編集</h2>
+      <div class="users-edit-form">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+        <!--form_tagメソッドでフォームの入力内容をアクション側へ送信。"post"のルーティングに用いる。-->
+        <!--画像データを送信する際は{multipart :true}を忘れずにつける！-->
+        <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
+          <p>プロフィール画像</p>
+          <input name="image" type="file">
+          <p>ユーザー名</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>登録メールアドレス</p>
+          <input name ="email" value="<%= @user.email %>">
+          <input type="submit" value="保存">
+        <% end %>
+      </div>
+  </div>
+</div>

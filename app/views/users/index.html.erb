@@ -1,0 +1,10 @@
+<!--ユーザー一覧  ※メモ帳アプリとしては余計な情報と判断しビューに表示しない※-->
+<div class="main-user-index">
+  <div class="container">
+    <!--each文を用いてusersテーブルからユーザー情報を取得し表示する-->
+    <% @users.each do|user| %>
+      <div class="posts-index-item">
+        <%= link_to(user.name,"/users/#{user.id}") %>
+      </div>
+    <% end %>
+</div>

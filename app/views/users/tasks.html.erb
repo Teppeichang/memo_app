@@ -1,0 +1,32 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <div class="user-images">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+      </div>
+      <p>ユーザー名</p>
+      <p><%= @user.name %></p>
+      <p>登録メールアドレス</p>
+      <p><%= @user.email %></p>
+      <div class="user-menu">
+        <% if @user.id == @current_user.id %>
+          <%= link_to("ユーザー情報の編集", "/users/#{@user.id}/edit") %>
+        <% end %>
+      </div>
+    </div>
+    
+    <ul class="user-tabs">
+      <li><%= link_to("タスク一覧", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("完了したタスク","/users/#{@user.id}/tasks") %></li>
+    </ul>
+    
+    <!-- 実行済み投稿一覧を表示 -->
+    <% @tasks.each do |task| %>
+    <% post = Post.find_by(id: task.post_id) %>
+      <div class="posts-index-item">
+        <%= link_to(post.content, "/posts/#{post.id}") %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

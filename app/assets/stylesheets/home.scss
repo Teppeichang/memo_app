@@ -1,0 +1,129 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*共通レイアウト*/
+a{
+  text-decoration: none;
+  color:black;
+  cursor: pointer;
+}
+
+body{
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  background-image: url("/memo_app_background.jpg");
+  background-size: cover;
+}
+
+.main{
+  position: absolute;
+  top: 64px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+
+.container {
+  max-width: 600px;
+  margin: 70px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+  background-color: linen;
+}
+
+
+
+/*ヘッダー*/
+header{
+  width: 100%;
+  height: 65px;
+  background-color: lightgreen;
+  color: black;
+  z-index: 1;
+}
+
+.header-logo{
+  float: left;
+  font-size: 30px;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.header-menu{
+  list-style-type: none;
+  float: right;
+}
+
+.header-menu li{
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-right: 15px;
+}
+
+/*トップページ*/
+.top-message{
+  padding:300px;
+  text-align: center;
+}
+
+.top-message h2{
+  font-size: 60px;
+}
+
+.top-message p{
+  font-size:35px
+}
+
+/*MemoAppとは（About）ページ*/
+.about-main{
+  padding:300px;
+  text-align: center;
+}
+
+.about-main h2{
+  font-size: 60px;
+}
+
+.about-main p{
+  font-size: 35px;
+}
+
+/*新規投稿ページ*/
+.form input[name="title"]{
+  width: 590px;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.form textarea{
+  width: 590px;
+  height: 300px;
+}
+
+.form input[type="submit"]{
+  width: 100px;
+  height: 50px;
+  margin-top: 15px;
+}
+
+/*flash[:notice]の体裁*/
+.flash{
+  display: inline-block;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color:orange;
+  color: white;
+  text-align: center;
+  z-index: 10;
+  font-size: 20px;
+}
+
+/*エラーメッセージ*/
+.form-error{
+  color: red;
+}

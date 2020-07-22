@@ -1,0 +1,15 @@
+<!--投稿編集ページ。アクション側で投稿のidをpostsテーブルから取得し、変数@postに代入。-->
+<!--ビュー側で投稿ごとのidとURLが合致するようにリンク付けする。-->
+<div class="main posts-new">
+  <div class="container">
+    <h2 class="form-heading">編集</h2>
+    <!--form_tagメソッドでフォームの入力内容をアクション側へ送信。"post"のルーティングに用いる。-->
+    <%= form_tag("/posts/#{@post.id}/update")do %>
+      <div class="form">
+        <input name="title" value="<%= @post.title %>">
+        <textarea name="content"><%= @post.content %></textarea>
+        <input type="submit" value="保存">
+      </div>
+    <% end %>
+  </div>
+</div>

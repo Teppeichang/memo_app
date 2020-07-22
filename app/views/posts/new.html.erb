@@ -1,0 +1,13 @@
+<!--新規投稿ページ-->
+<div class="main posts-new">
+  <div class="container">
+    <h2 class="form-heading">新規投稿</h2>
+    <!--form_tagメソッドでフォームの入力内容をアクション側へ送信。"post"のルーティングに用いる。-->
+    <%= form_tag("/posts/create")do %>
+      <div class="form">
+        <textarea name="content"></textarea>
+        <input type="submit" value="投稿する">
+      </div>
+    <% end %>
+  </div>
+</div>

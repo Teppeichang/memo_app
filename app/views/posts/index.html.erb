@@ -1,0 +1,10 @@
+<!--投稿一覧ページ  ※メモ帳アプリとしては余計な情報と判断しビューに表示しない※-->
+<div class="main-posts-index">
+  <div class="container">
+    <!--each文を用い、postsテーブルから投稿を取得し表示する-->
+    <% @posts.each do|post| %>
+      <div class="posts-index-item">
+        <%= link_to(post.content,"/posts/#{post.id}") %>
+      </div>
+    <% end %>
+</div>

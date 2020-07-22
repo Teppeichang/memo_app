@@ -1,0 +1,60 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*共通*/
+input[type="submit"]{
+  cursor: pointer;
+}
+
+/*新規ユーザー登録ページ(signup)*/
+.users-form input[name="name"]{
+  width: 590px;
+  height: 25px;
+}
+
+.users-form input[name="email"]{
+  width: 590px;
+  height: 25px;
+}
+
+.users-form input[name="password"]{
+  width: 590px;
+  height: 25px;
+}
+
+/*ユーザー詳細ページ(show)*/
+.user{
+  text-align: center;
+}
+
+.user-images img{
+  width: 60px;
+  height: 60px;
+  margin-top:30px;
+  border-radius: 40%;
+}
+
+.posts-index-item{
+  text-align: center;
+}
+
+.user-menu{
+  display: inline-block;
+  border-bottom: black solid 1px;
+  margin-bottom:20px
+}
+
+.user-tabs li{
+  list-style: none;
+  display: inline;
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+.user-tabs li:hover{
+  border-bottom: green solid 2px;
+}
+.user-tabs li.active{
+  border-bottom: green solid 2px;
+}

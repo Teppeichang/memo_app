@@ -1,0 +1,31 @@
+<!--ユーザ詳細ページ-->
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <div class="user-images">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+      </div>
+      <p>ユーザー名</p>
+      <p><%= @user.name %></p>
+      <p>登録メールアドレス</p>
+      <p><%= @user.email %></p>
+        <div class="user-menu">
+          <% if @current_user.id == @user.id %>
+            <%= link_to("ユーザー情報の編集","/users/#{@user.id}/edit") %>
+          <% end %>
+        </div>
+    </div>
+
+    <!--未完了タスク/完了タスクのタブ。デフォルトで未完了タスク側を表示-->
+    <ul class="user-tabs">
+      <li class="active"><%= link_to("タスク一覧", "/users/#{@user.id}") %></li>
+      <li><%= link_to("完了したタスク","/users/#{@user.id}/tasks") %></li>
+    </ul>
+  
+    <!--ユーザーの投稿一覧をeach文で表示-->
+    <% @user.posts.each do|post| %>
+      <div class="posts-index-item">
+        <%= link_to(post.content,"/posts/#{post.id}") %>
+      </div>
+    <% end %>
+</div>

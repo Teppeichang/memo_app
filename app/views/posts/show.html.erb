@@ -1,0 +1,41 @@
+<!--投稿詳細-->
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="posts-user-name">
+        <!--投稿したユーザーの画像とユーザー名（ユーザー詳細ページへのリンク付き）-->
+        <img src="<%= "/user_images/#{@user.image_name}"%>">
+        <%= link_to(@user.name,"/users/#{@user.id}") %>
+      </div>
+        <!--投稿内容（postsテーブルのcontentカラムの内容）-->
+      <p>
+        <%= @post.content %>
+      </p>
+      <div class="post-time">
+        <!--投稿および更新日時-->
+        <%= @post.created_at.strftime("%Y-%m-%d %H:%M") %>
+        <%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %>
+      </div>
+      <div class="post-menu">
+        <!--編集等投稿に対して行うオプションメニュー（投稿者のみ実行可能）-->
+        <% if @current_user.id == @post.user_id %>
+          <%= link_to("編集","/posts/#{@post.id}/edit") %>
+          <%= link_to("削除","/posts/#{@post.id}/destroy",{method:"post"})%>
+        <% end %>  
+        <!--ToDoボタンの表示（投稿者のみ実行可能）-->
+        <!--postルーティングにlink_toメソッドを用いる場合は、第３引数に{method:"post"}を必ず指定する-->
+        <% if @current_user.id == @post.user_id %>
+          <% if Task.find_by(user_id: @current_user.id,post_id: @post.id)%>
+            <%= link_to("/tasks/#{@post.id}/destroy",{method:"post"}) do %>
+            <span class="fas fa-check task-btn-incomplete"></span>
+            <% end %>
+          <% else %>
+            <%= link_to("/tasks/#{@post.id}/create",{method:"post"}) do %>
+            <span class="fas fa-check task-btn-complete"></span>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
