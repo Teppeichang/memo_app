@@ -1,24 +1,8 @@
-# README
+# memo_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ProgateのRailsチュートリアルを終え、拙いですが初めて自作したアプリです。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+機能
+ログイン／ログアウト、ユーザ情報編集
+メモ内容の編集／削除
+ToDoチェック
