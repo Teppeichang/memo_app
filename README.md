@@ -7,6 +7,7 @@ ProgateのRailsチュートリアルを終え、拙いですが初めて自作�
 
 English
 My first application I've Finished Progate(#) Rails Turtorial.(I apologize my poor app...)
+
 #Progate is Japanese online code-learning service.
 
 Functions
