@@ -1,3 +1,4 @@
+<!--ユーザ詳細ページと共通のレイアウト-->
 <div class="main user-show">
   <div class="container">
     <div class="user">
@@ -14,7 +15,8 @@
         <% end %>
       </div>
     </div>
-    
+
+    <!--未完了タスク/完了タスクのタブ。デフォルトで未完了タスク側を表示-->
     <ul class="user-tabs">
       <li><%= link_to("タスク一覧", "/users/#{@user.id}") %></li>
       <li class="active"><%= link_to("完了したタスク","/users/#{@user.id}/tasks") %></li>
