@@ -1,24 +1,18 @@
-# README
+# memo_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ProgateのRailsチュートリアルを終え、拙いですが初めて自作したアプリです。
 
-Things you may want to cover:
+機能
 
-* Ruby version
+ログイン／ログアウト,ユーザ情報編集,メモ内容の編集／削除,ToDoチェック
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+English
 
-* Database initialization
+My first application I've Finished Progate(#) Rails Turtorial.(I apologize my poor app...)
 
-* How to run the test suite
+#Progate is Japanese online code-learning service.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Functions
+Login/Logout,User-edit,Content-edit/delete,Task-check(done/not done)
